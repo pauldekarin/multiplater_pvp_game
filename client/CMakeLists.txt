@@ -10,18 +10,18 @@ include_directories(/opt/homebrew/Cellar/websocketpp/0.8.2/include/)
 ##Boost
 include_directories(/opt/homebrew/Cellar/boost/1.86.0/include/)
 ##OpenSSL
-include_directories(/opt/homebrew/Cellar/openssl@3/3.3.1/include/)
+include_directories(/opt/homebrew/opt/openssl@3/include/)
 ##SFML
 include_directories(/opt/homebrew/Cellar/sfml/2.6.1/include)
-include_directories(/Users/bimba/Desktop/multiplayer_sfml_heroku_server/client/external/json/include/)
-include_directories(/opt/homebrew/Cellar/libpng/1.6.43/include)
+include_directories(external/json/include/)
+include_directories(/opt/homebrew/opt/libpng/include)
 # Link Libraries
 
-link_directories(/opt/homebrew/Cellar/libpng/1.6.43/lib)
+link_directories(/opt/homebrew/opt/libpng/lib)
 ##Boost
 link_directories(/opt/homebrew/Cellar/boost/1.86.0/lib/)
 ##OpenSSL
-link_directories(/opt/homebrew/Cellar/openssl@3/3.3.1/lib/)
+link_directories(/opt/homebrew/opt/openssl@3/lib/)
 ##WebSocket++
 link_directories(/opt/homebrew/Cellar/websocketpp/lib)
 ##SFML
