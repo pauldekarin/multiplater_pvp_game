@@ -1,61 +1,75 @@
-# Игра "Angry Rabbits"
+# Angry Rabbits Game
 ![](./assets/game.png)
 
 ## Gameplay
 <p align="center">
   <img src="./assets/gameplay.gif" alt="animated" />
 </p>
-Сервер запущен на бесплатном хостинге, из-за чего у игроков высокий пинг🫠
+The server is hosted on a free platform, which may result in high ping for players 🫠
 
-## Обзор
+## Overview
 
-"Angry Rabbits" — это увлекательная многопользовательская игра, в которой игроки управляют кроликами и кидают друг в друга топоры. Игра состоит из серверной части, написанной на Node.js, и клиентской части, написанной на C++ с использованием WebSocket++ и SFML.
+"Angry Rabbits" is an engaging multiplayer game where players control rabbits and throw axes at each other. The game consists of a server-side component written in Node.js and a client-side component written in C++ using WebSocket++ and SFML.
 
-## Особенности
+## Features
 
-- **Поддержка многопользовательского режима:** Создание игровых комнат, в которых могут участвовать игроки.
-- **Общение в реальном времени:** Сервер управляет состоянием игры и общается с клиентами через WebSocket.
-- **Интерактивный игровой процесс:** Игроки могут перемещаться по карте и бросать топоры в других игроков.
-- **Плавная графика:** Использование SFML для рендеринга и игровых механик.
+- **Multiplayer Support:** Create and join game rooms for multiplayer fun.
+- **Real-time Communication:** The server manages game state and communicates with clients via WebSocket.
+- **Interactive Gameplay:** Players can move around the map and throw axes at other players.
+- **Smooth Graphics:** Utilizes SFML for rendering and game mechanics.
 
-## Архитектура
+## Architecture
 
-### Сервер (Node.js)
+### Server (Node.js)
 
-- **Управление комнатами:** Сервер создает и управляет комнатами для игроков.
-- **Обработка состояния игры:** Непрерывное обновление и отправка состояния игры всем участникам в реальном времени.
-- **glitch.me** - бесплатный хостинговый сервис, на котором запущен сервер для данной игры
-### Клиент (C++)
+- **Room Management:** Creates and manages rooms for players.
+- **Game State Handling:** Continuously updates and sends game state to all participants in real-time.
+- **Hosting:** The server is hosted on glitch.me, a free hosting service.
 
-- **Интеграция WebSocket++:** Клиент подключается к серверу с помощью WebSocket++, что позволяет осуществлять общение в реальном времени.
-- **Управление потоками:** Архитектура клиента разделена на отдельные потоки для:
-  - **Подключения:** Установление и поддержание WebSocket-соединения с сервером.
-  - **Отправки:** Отправка действий игрока и обновлений на сервер.
-  - **Получения:** Обработка ответов от сервера и обновление состояния игры.
+### Client (C++)
 
-- **SFML для графики:** Клиент использует SFML для рендеринга игрового мира и обработки взаимодействия с игроком.
+- **WebSocket++ Integration:** Connects to the server via WebSocket++ for real-time communication.
+- **Thread Management:** The client architecture is divided into separate threads for:
+  - **Connection:** Establishing and maintaining WebSocket connections with the server.
+  - **Sending:** Sending player actions and updates to the server.
+  - **Receiving:** Processing responses from the server and updating the game state.
 
-## Используемые технологии
+- **SFML for Graphics:** Uses SFML for rendering the game world and handling player interactions.
 
-- **Node.js:** Для серверной логики и управления игровыми комнатами.
-- **C++:** Для клиентского приложения.
-- **WebSocket++:** Для общения в реальном времени между клиентом и сервером.
-- **SFML:** Для графического рендеринга и пользовательского интерфейса.
-- **STL:** Стандартная библиотека шаблонов для структур данных и алгоритмов.
-- **nlohmann::json:** Для удобной работы с JSON.
+## Technologies Used
 
-## Установка
+- **Node.js:** For server logic and room management.
+- **C++:** For the client application.
+- **WebSocket++:** For real-time communication between client and server.
+- **SFML:** For graphics rendering and user interface.
+- **STL:** Standard Template Library for data structures and algorithms.
+- **nlohmann::json:** For easy JSON handling.
 
-### Клиент
+## Installation
 
-```bash
-  cd client
-  mkdir build
-  cd build
-  cmake ..
-  make
-  ./main
-```
+### Client
 
-## License
-Этот проект лицензирован по лицензии MIT
+1. Navigate to the client directory:
+    ```bash
+    cd client
+    ```
+2. Create a build directory:
+    ```bash
+    mkdir build
+    cd build
+    ```
+3. Generate build files with CMake:
+    ```bash
+    cmake ..
+    ```
+4. Compile the project:
+    ```bash
+    make
+    ```
+5. Run the client:
+    ```bash
+    ./main
+    ```
+    
+# License
+This project is licensed under the MIT License.
